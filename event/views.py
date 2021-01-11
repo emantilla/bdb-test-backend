@@ -25,7 +25,7 @@ def add_user_view(request):
         user_model.save()
         message = 'Usuario Registrado'
 
-    return JsonResponse({'message':message})
+    return JsonResponse({'message':message}, status=status.HTTP_200_OK)
 
 @csrf_exempt
 def login_user_view(request):
@@ -39,11 +39,13 @@ def login_user_view(request):
         if user is not None:
             login(request, user)
             message = 'usuario logeado: ' + str(user.pk)
+            return JsonResponse({'message': message, 'id':user.pk}, status=status_code)
         else:
             message = 'Usuario o contrasenia incorrectos.'
             status_code = status.HTTP_401_UNAUTHORIZED
+            return JsonResponse({'message': message}, status=status_code)
 
-    return JsonResponse({'message': message, 'id':user.pk}, status=status_code)
+    
 
 
 @csrf_exempt
