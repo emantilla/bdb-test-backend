@@ -10,7 +10,7 @@ jobs:
           pkg-manager: pip
       - run:
           command: |
-            python3 manage.py test 
+            pip manage.py test 
           name: Test it
 orbs:
   python: circleci/python@1.0.0
