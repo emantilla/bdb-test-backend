@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'events',
-        'USER': 'usdbgallery',
-        'PASSWORD': 'Abcd123#',
-        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'vummunILx75nPXWlBT3u',
+        'HOST': 'events-bd.cch5cufqvjpd.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
