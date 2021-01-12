@@ -8,7 +8,7 @@ jobs:
           pkg-manager: pipenv
       - run:
           command: |
-            pipenv run pytest 
+            python3 manage.py test 
           name: Test it
 orbs:
   python: circleci/python@1.0.0
