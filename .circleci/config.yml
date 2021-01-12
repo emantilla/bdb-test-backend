@@ -4,8 +4,10 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          args: pytest
-          pkg-manager: pipenv
+          pkg-manager: pip
+      - python/install-packages:
+          pip-dependency-file: dev-requirements.txt
+          pkg-manager: pip
       - run:
           command: |
             python3 manage.py test 
