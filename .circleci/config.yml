@@ -4,20 +4,14 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pkg-manager: pip
-      - python/install-packages:
-          pip-dependency-file: dev-requirements.txt
-          pkg-manager: pip
-      - python/install-packages:
           args: pytest
-          pkg-manager: pip
-          pypi-cache: false
+          pkg-manager: pipenv
       - run:
           command: |
-            pytest --version
-          name: Test
+            pipenv run pytest --version
+          name: Test it
 orbs:
-  python: circleci/python@1.1.0
+  python: circleci/python@1.0.0
 version: 2.1
 workflows:
   main:
